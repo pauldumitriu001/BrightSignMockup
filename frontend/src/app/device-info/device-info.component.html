@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Welcome to the BrightSign Mockup Site</h1>
+  <p *ngIf="deviceId; else noDevice">
+    Device ID: <strong>{{ deviceId }}</strong>
+  </p>
+  <ng-template #noDevice>
+    <p>No Device ID found in the URL query parameters.</p>
+  </ng-template>
+</div>
