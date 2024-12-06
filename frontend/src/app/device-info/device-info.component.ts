@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./device-info.component.css'],
 })
 export class DeviceInfoComponent {
-  deviceId: string | null = null;
+  deviceId: string | null = null; 
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe((params: { [x: string]: any }) => {
@@ -19,3 +19,4 @@ export class DeviceInfoComponent {
     });
   }
 }
+
