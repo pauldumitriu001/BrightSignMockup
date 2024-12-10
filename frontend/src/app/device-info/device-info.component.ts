@@ -15,7 +15,7 @@ export class DeviceInfoComponent {
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe((params: { [x: string]: any }) => {
       this.deviceId =
-        params['deviceID'] || params['bsnDeviceId'] || 'Unknown Device';
+        params['deviceId'] || params['bsnDeviceId'] || 'Unknown Device';
     });
   }
 }
