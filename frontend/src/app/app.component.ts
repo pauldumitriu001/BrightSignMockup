@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'BrightSignMockup';
+export class AppComponent implements OnInit {
+  deviceId: string = '';
+  title: string = 'BrightSign Mockup';
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    // Extract deviceId from the query parameters
+    this.route.queryParams.subscribe((params) => {
+      this.deviceId = params['deviceId'] || 'N/A';
+    });
+    console.log(['deviceId is ', this.deviceId]);
+  }
 }
